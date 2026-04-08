@@ -1,6 +1,6 @@
 # ER_Diagram
 
-# Mordern Clinic System -
+# Mordern Clinic System - https://app.eraser.io/workspace/6ZQKQByTiYmuZIK9LHGG?origin=share&diagram=uMAAmj2eLEC0NMpJZpqa8
 
 <img width="2016" height="1355" alt="diagram-export-08-04-2026-17_39_57" src="https://github.com/user-attachments/assets/3995a396-fd43-4996-a645-1f7c38132bf0" />
 
