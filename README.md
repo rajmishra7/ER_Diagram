@@ -84,7 +84,7 @@ payments {
 }
 
 
----------##CARDINALITY##----------
+#CARDINALITY##----------
 
 
 users.user_id - doctors.doctor_id
