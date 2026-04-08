@@ -2,7 +2,10 @@
 
 # Mordern Clinic System -
 
-users [icon: user] {
+<img width="2016" height="1355" alt="diagram-export-08-04-2026-17_39_57" src="https://github.com/user-attachments/assets/3995a396-fd43-4996-a645-1f7c38132bf0" />
+
+
+users {
   user_id serial PK
   name VARCHAR(50) not null
   email VARCHAR(50) not null
@@ -15,7 +18,7 @@ users [icon: user] {
   updated_at timestamp
 }
 
-doctors [icon: doctor] {
+doctors  {
   doctor_id FK
   specialization_id FK - specializations.specialization_id
 } 
@@ -25,7 +28,7 @@ specializations {
   name VARCHAR(50) not null
 }
 
-patients [icon: person] {
+patients{
   patient_id FK
   issue text not null
 }
