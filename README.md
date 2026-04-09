@@ -1,4 +1,84 @@
 # ER_Diagram
+# Comic-Con Parking system
+
+Link - https://app.eraser.io/workspace/nrydT3ODgKHzwXvUhphm?origin=share
+
+<img width="2175" height="1177" alt="diagram-export-10-04-2026-00_24_15" src="https://github.com/user-attachments/assets/79539de2-71ae-49d5-a6d3-a7d4b1851e88" />
+
+Vehicles [icon: car, color: white] {
+  vehicle_id serial PK
+  vehicle_number CHAR(12) not null
+  created_at TIMESTAMP
+  updated_at TIMESTAMP
+  owner_id FK
+  vehicle_category_id FK
+}
+
+Vehicle_categories [color: white, icon: list] {
+  vehicle_category_id serial PK
+  vehicle_type enum(car, bike, suv, ev, cab)
+}
+
+Parking_zones [color: white] {
+  zone_id int PK
+  zone_name text
+}
+
+Parking_spots [color: white] {
+  parking_spot_id serial PK
+  zone_id FK
+  parking_spot_number int not null
+  parking_spot_category FK
+  is_spot_reserved boolean
+}
+ 
+ Parking_spot_categories [icon: menu, color: white]{
+  spot_category_id serial PK 
+  spot_category_name enum(cosplayers, exhibitors, creators, VIP guests, staff, EV_charging )
+ }
+
+ Parking_tickets [icon: ticket, color: white] {
+  ticket_id serial PK
+  ticket_number int
+  parking_session_id FK
+  vehicle_id FK 
+  parking_spot_id FK
+ }
+
+ Parking_sessions [color: white]{
+  parking_session_id serial PK
+  session_status enum("active", "expired")
+  vehicle_id FK
+  parking_spot_id FK
+  entered_at TIMESTAMP
+  exited_at TIMESTAMP 
+ }
+
+Payment [icon: money, color: white] {
+  payment_id serial PK
+  parking_session_id FK
+  ticket_id
+  amount int 
+  payment_status enum("Success", "Pending", "Failed")
+  payment_method enum("UPI", "Cash", "Card")
+}
+
+--Relationships--
+
+Vehicles.id > Vehicle_categories.vehicle_category_id
+Vehicles.vehicle_id < Parking_sessions.parking_session_id
+
+Parking_tickets.ticket_id - Payment.payment_id
+Parking_spots.parking_spot_id < Parking_sessions.parking_session_id
+
+Parking_zones.zone_id < Parking_spots.parking_spot_id
+Parking_spots.parking_spot_id > Parking_spot_categories.spot_category_id
+
+Parking_sessions.parking_session_id - Parking_tickets.ticket_id
+
+Parking_sessions.parking_session_id - Payment.payment_id
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Mordern Clinic System - https://app.eraser.io/workspace/6ZQKQByTiYmuZIK9LHGG?origin=share&diagram=uMAAmj2eLEC0NMpJZpqa8
 
