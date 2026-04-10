@@ -2,9 +2,10 @@
 
 #Smart Elevator System
 
-
+<img width="1632" height="1162" alt="diagram-export-11-04-2026-01_04_58" src="https://github.com/user-attachments/assets/4c4b6b26-6ca4-4c1f-a592-46c86dccbcea" />
 
 https://app.eraser.io/workspace/nrydT3ODgKHzwXvUhphm
+
 ##Relationships
 
 buildings.building_id < floors.floor_id
