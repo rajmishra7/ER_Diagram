@@ -1,9 +1,30 @@
 # ER_Diagram
 
-#Elevator System
+#Smart Elevator System
+
+
 
 https://app.eraser.io/workspace/nrydT3ODgKHzwXvUhphm
--------------------------------------------------------------------------------
+##Relationships
+
+buildings.building_id < floors.floor_id
+buildings.building_id < elevator_shaft.shaft_id
+
+elevator_shaft.shaft_id - elevators.elevator_id
+
+elevators.elevator_id < floors.floor_id
+
+floors.floor_id  < floor_request.requestID
+floors.floor_id < floor_request.requestID
+
+floor_request.requestID - ride_assignment.assignment_id
+
+ride_assignment.assignment_id - elevators.elevator_id
+
+elevators.elevator_id < rides.ride_id
+elevators.elevator_id < maintenance.maintenance_id
+elevators.elevator_id < elevator_status_tracking.status_id
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Comic-Con Parking system
 
 Link - https://app.eraser.io/workspace/nrydT3ODgKHzwXvUhphm?origin=share
